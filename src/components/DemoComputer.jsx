@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react';
 const DemoComputer = (props) => {
     const group = useRef();
 
-    const { nodes, materials, animations } = useGLTF('public/models/computer.glb');
+    const { nodes, materials, animations } = useGLTF('/models/computer.glb');
 
     
     const txt = useVideoTexture(
@@ -1011,7 +1011,7 @@ const DemoComputer = (props) => {
         </group>
     );
 };
-useGLTF.preload('public/models/computer.glb')
+useGLTF.preload('/models/computer.glb')
 
 
 

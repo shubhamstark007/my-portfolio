@@ -9,15 +9,15 @@ const Developer = ({ animationName = 'idle', ...props }) => {
     
     
     // Load model
-    const { scene } = useGLTF('public/models/animations/developer.glb');
+    const { scene } = useGLTF('/models/animations/developer.glb');
     const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
     const { nodes, materials } = useGraph(clone);
 
     // Load FBX animations
-    const idleFBX = useFBX('public/models/animations/idle.fbx');
-    const saluteFBX = useFBX('public/models/animations/salute.fbx');
-    const clappingFBX = useFBX('public/models/animations/clapping.fbx');
-    const victoryFBX = useFBX('public/models/animations/victory.fbx');
+    const idleFBX = useFBX('/models/animations/idle.fbx');
+    const saluteFBX = useFBX('/models/animations/salute.fbx');
+    const clappingFBX = useFBX('/models/animations/clapping.fbx');
+    const victoryFBX = useFBX('/models/animations/victory.fbx');
     
     // Prepare clips safely
     const clips = useMemo(() => {
@@ -115,10 +115,10 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 };
 
 // Preload models
-useGLTF.preload('public/models/animations/developer.glb');
-useFBX.preload('public/models/animations/idle.fbx');
-useFBX.preload('public/models/animations/salute.fbx');
-useFBX.preload('public/models/animations/clapping.fbx');
-useFBX.preload('public/models/animations/victory.fbx');
+useGLTF.preload('/models/animations/developer.glb');
+useFBX.preload('/models/animations/idle.fbx');
+useFBX.preload('/models/animations/salute.fbx');
+useFBX.preload('/models/animations/clapping.fbx');
+useFBX.preload('/models/animations/victory.fbx');
 
 export default Developer;
